@@ -95,3 +95,5 @@ add_test(NAME sonic_2_august_21st_assemble COMMAND clownassembler -i "sonic2alph
 
 # Test that the Sonic 2 August 21st disassembly produces the correct machine code.
 add_test(NAME sonic_2_august_21st_compare COMMAND ${CMAKE_COMMAND} -E compare_files "sonic2alpha.bin" "${CMAKE_CURRENT_BINARY_DIR}/sonic2alpha.bin" WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tests/Sonic-2-Aug-21st-Disassembly")
+
+install(TARGETS clownassembler clownassembler_core clownassembler_asm68k RUNTIME DESTINATION bin)
